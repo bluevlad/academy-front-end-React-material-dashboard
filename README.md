@@ -184,50 +184,45 @@ export const BASE_API = "http://localhost:8080/api";
 
 ### API 엔드포인트
 
-#### 게시판 API
-- `GET /api/board/getBoardList?curPage={page}` - 게시판 목록 조회
+### API 엔드포인트
 
-#### 시험 API
-- `GET /api/exam/getExamList?curPage={page}&userId={userId}` - 시험 목록 조회
-- `GET /api/exam/getExamView?examId={examId}` - 시험 상세 조회
-- `POST /api/exam/getExamView` - 시험 응시 가능 여부 확인
-- `GET /api/exam/getExamEdit?examId={examId}&userId={userId}` - 시험 결과 조회
+각 모듈별 상세 API 명세는 해당 `src/api/{module}/README.md` 파일을 참조하세요.
 
-#### 메뉴 API
-- `GET /api/menu/getMenuTree` - 메뉴 트리 구조 조회
+#### 1. 게시판 (Board)
+- **위치**: `src/api/board`
+- **주요 기능**: 공지사항 및 게시글 조회
 
-### API 응답 예시
+#### 2. 시험 (Exam)
+- **위치**: `src/api/exam`
+- **주요 기능**: 시험 목록/상세 조회, 응시 및 결과 확인
 
-#### 메뉴 트리 API 응답 구조
-```json
-{
-  "menuTree": [
-    {
-      "isUse": "Y",
-      "menuNo": 1,
-      "menuUrl": "",
-      "menuIcon": "icon-navigation",
-      "children": [
-        {
-          "isUse": "Y",
-          "menuNo": 2,
-          "menuUrl": "",
-          "menuIcon": "feather icon-home",
-          "children": [],
-          "menuTitle": "Dashboard",
-          "menuDepth": 1,
-          "menuId": "dashboard",
-          "menuUpperId": 1
-        }
-      ],
-      "menuTitle": "Dashboard",
-      "menuDepth": 1,
-      "menuId": "dashboard",
-      "menuUpperId": 1
-    }
-  ]
-}
-```
+#### 3. 회원 (Member)
+- **위치**: `src/api/member`
+- **주요 기능**: 회원 목록 조회 및 관리
+
+#### 4. 메뉴 (Menu)
+- **위치**: `src/api/menu`
+- **주요 기능**: 메뉴 트리 구조 조회
+
+#### 5. 도서 (Book)
+- **위치**: `src/api/book`
+- **주요 기능**: 도서 마스터, 도서 코멘트, 도서 주문 관리
+
+#### 6. 제휴사 (Coop)
+- **위치**: `src/api/coop`
+- **주요 기능**: 제휴사 마스터, IP 관리, 제휴사 게시판/주문
+
+#### 7. 상담 (Counsel)
+- **위치**: `src/api/counsel`
+- **주요 기능**: 상담 일정 등록/수정, 상담 신청 현황 조회
+
+#### 8. D-Day
+- **위치**: `src/api/dday`
+- **주요 기능**: D-Day 일정 등록 및 관리
+
+#### 9. 로그인 (Login)
+- **위치**: `src/api/login`
+- **주요 기능**: 로그인, 회원가입, 프로필 관리
 
 ## 🎨 주요 컴포넌트
 
