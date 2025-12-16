@@ -62,6 +62,12 @@ import SignUp from "layouts/authentication/sign-up";
 import BookList from "layouts/book";
 import BookWrite from "layouts/book/write";
 
+// Coop Components
+import CoopList from "layouts/coop";
+import CoopBoardList from "layouts/coop/board";
+import CoopBoardWrite from "layouts/coop/board/write";
+import CoopOrderList from "layouts/coop/order";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -135,6 +141,42 @@ const routes = [
     icon: <Icon fontSize="small">menu</Icon>,
     route: "/menu",
     component: <Menu />,
+  },
+  {
+    type: "collapse",
+    name: "Coop",
+    key: "coop",
+    icon: <Icon fontSize="small">business</Icon>,
+    collapse: [
+      {
+        name: "Coop Management",
+        key: "coop-management",
+        route: "/coop",
+        component: <CoopList />,
+      },
+      {
+        name: "Coop Board",
+        key: "coop-board",
+        route: "/coop/board",
+        component: <CoopBoardList />,
+      },
+      {
+        name: "Coop Order",
+        key: "coop-order",
+        route: "/coop/order",
+        component: <CoopOrderList />,
+      },
+    ],
+  },
+  {
+    key: "coop-board-write",
+    route: "/coop/board/write",
+    component: <CoopBoardWrite />,
+  },
+  {
+    key: "coop-board-detail",
+    route: "/coop/board/detail",
+    component: <CoopBoardWrite />,
   },
   {
     type: "collapse",
