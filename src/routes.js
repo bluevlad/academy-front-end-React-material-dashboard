@@ -58,6 +58,10 @@ import UserMenu from "layouts/menu"; // Alias existing Menu layout as UserMenu
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 
+// Book Components
+import BookList from "layouts/book";
+import BookWrite from "layouts/book/write";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -139,6 +143,19 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",
     component: <Tables />,
+  },
+  {
+    type: "collapse",
+    name: "Book",
+    key: "book",
+    icon: <Icon fontSize="small">library_books</Icon>,
+    route: "/book",
+    component: <BookList />,
+  },
+  {
+    key: "book-write",
+    route: "/book/write",
+    component: <BookWrite />,
   },
   {
     type: "collapse",
