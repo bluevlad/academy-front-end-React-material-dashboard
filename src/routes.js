@@ -87,6 +87,11 @@ import PopupDetail from "layouts/popup/detail";
 import StatList from "layouts/stat";
 import SurveyList from "layouts/survey";
 
+// Manage Components
+import CategorySaleList from "layouts/manage/categorySale";
+import LectureYearList from "layouts/manage/lectureYear";
+import TeacherCalculateList from "layouts/manage/teacherCalculate";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -174,6 +179,32 @@ const routes = [
         component: <StatList />,
       },
     ]
+  },
+  {
+    type: "collapse",
+    name: "경영 관리",
+    key: "manage",
+    icon: <Icon fontSize="small">manage_accounts</Icon>,
+    collapse: [
+      {
+        name: "카테고리별 매출",
+        key: "category-sale",
+        route: "/manage/category-sale",
+        component: <CategorySaleList />,
+      },
+      {
+        name: "연도별 강의",
+        key: "lecture-year",
+        route: "/manage/lecture-year",
+        component: <LectureYearList />,
+      },
+      {
+        name: "강사료 정산",
+        key: "teacher-calculate",
+        route: "/manage/teacher-calculate",
+        component: <TeacherCalculateList />,
+      },
+    ],
   },
   // Hidden routes for details
   {
