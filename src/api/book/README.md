@@ -1,28 +1,24 @@
 # Book API
 
-Provides functions to manage books/textbooks.
+Provides functions for managing books.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
 ### `fetchBookList(params)`
-Fetches a list of books.
-- **Params**:
-  - `pageIndex`: Current page number.
-  - `searchCondition`: Search condition.
-  - `searchKeyword`: Search keyword.
-  - `searchUseYn`: Usage status filter.
+Retrieves a list of books.
 
 ### `fetchBookView(params)`
-Fetches book details.
+Retrieves details of a specific book.
 
 ### `fetchBookWriteData()`
-Fetches basic data required for registering a book.
+Retrieves data for writing a book entry.
 
 ### `saveBook(bookData)`
-Registers a new book.
+Saves a new book.
 
 ### `updateBook(bookData)`
 Updates an existing book.
@@ -31,10 +27,10 @@ Updates an existing book.
 Deletes a book.
 
 ### `deleteBookAll(params)`
-Deletes all related books.
+Deletes multiple books.
 
 ### `fetchBookSellList(params)`
-Fetches the book sales list.
+Retrieves a list of book sales.
 
 ### `fetchBookSellListExcel(params)`
-Fetches the book sales list for Excel download.
+Retrieves a list of book sales for Excel export.

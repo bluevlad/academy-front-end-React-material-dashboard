@@ -1,20 +1,27 @@
 # Stat API
 
-Provides functions for various statistics.
+Provides functions for retrieving statistical data.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
 ### `getTeacherList(params)`
-Fetches teacher statistics.
+Retrieves a list of teachers.
 
 ### `getTeacherSubjectList(params)`
-Fetches teacher subject statistics.
+Retrieves a list of teacher subjects.
+
+### `getTeacherDetail(params)`
+Retrieves details of a specific teacher.
 
 ### `getTeacherSalesStat(params)`
-Fetches teacher sales statistics.
+Retrieves sales statistics for a teacher.
 
 ### `getUserBuyStat(params)`
-Fetches user purchase statistics.
+Retrieves user purchase statistics.
+
+### `getSearchKeywordList(params)`
+Retrieves a list of search keywords.

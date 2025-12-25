@@ -1,31 +1,33 @@
 # Survey API
 
-Provides functions to manage surveys and question sets.
+Provides functions for managing surveys and banks.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
-### Bank (Question Bank)
-- `getBankList`
-- `getBankDetail`
-- `insertBank`
-- `updateBank`
-- `deleteBank`
+### `getBankList(params)`
+Retrieves a list of question banks.
 
-### Set (Question Set)
-- `getSetList`
-- `getSetDetail`
-- `insertSet`
-- `updateSet`
-- `deleteSet`
-- `insertSetItem`
+### `getBankDetail(params)`
+Retrieves details of a specific question bank.
 
-### Survey
-- `getSurveyList`
-- `getSurveyDetail`
-- `insertSurvey`
-- `updateSurvey`
-- `deleteSurvey`
-- `getAnswerList`
+### `insertBank(data)`
+Creates a new question bank.
+
+### `updateBank(data)`
+Updates an existing question bank.
+
+### `deleteBank(data)`
+Deletes a question bank.
+
+### `getSetList(params)`
+Retrieves a list of question sets.
+
+### `getSetDetail(params)`
+Retrieves details of a specific question set.
+
+### `insertSet(data)`
+Creates a new question set.

@@ -1,14 +1,15 @@
 # Member API
 
-Provides functions to manage members.
+Provides functions for managing members.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
-### `getMemberList()`
-Fetches a list of members.
+### `fetchMemberListData(page)`
+Retrieves a list of members.
 
-### `getMemberDetail()`
-Fetches member details.
+### `fetchMemberDetailData()`
+Retrieves details of a specific member.

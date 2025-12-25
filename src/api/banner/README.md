@@ -1,20 +1,45 @@
 # Banner API
 
-Provides functions to manage banners.
+Provides functions for managing banners and banner items.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
-### `getBannerList()`
-Fetches a list of banners.
+### `getBannerList(params)`
+Retrieves a list of banners.
+
+### `getBannerDetail(bannerCd)`
+Retrieves details of a specific banner.
 
 ### `insertBanner(data)`
-Registers a new banner.
+Creates a new banner.
 
 ### `updateBanner(data)`
 Updates an existing banner.
 
-### `deleteBanner(data)`
+### `deleteBanner(bannerCd)`
 Deletes a banner.
+
+### `getBannerItemList(params)`
+Retrieves a list of banner items.
+
+### `getBannerItemDetail(params)`
+Retrieves details of a specific banner item.
+
+### `insertBannerItem(data)`
+Creates a new banner item.
+
+### `updateBannerItem(data)`
+Updates an existing banner item.
+
+### `updateBannerItemFlag(data)`
+Updates the flag of a banner item.
+
+### `updateBannerItemReset(data)`
+Resets a banner item.
+
+### `deleteBannerItem(data)`
+Deletes a banner item.

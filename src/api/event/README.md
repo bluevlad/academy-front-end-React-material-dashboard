@@ -1,23 +1,18 @@
 # Event API
 
-Provides functions to manage events.
+Provides functions for managing events.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
 ### `getEventList(params)`
-Fetches a list of events.
-- **Params**:
-  - `pageIndex`: Current page number (standardized).
-  - `searchCondition`: Search condition (standardized).
-  - `searchKeyword`: Search keyword (standardized).
-  - `searchUseYn`: Usage status filter (standardized).
-  - `searchEventTitle`: Event title filter.
+Retrieves a list of events.
 
 ### `getEventDetail(params)`
-Fetches event details.
+Retrieves details of a specific event.
 
 ### `insertEvent(data)`
 Creates a new event.
@@ -27,3 +22,15 @@ Updates an existing event.
 
 ### `deleteEvent(data)`
 Deletes an event.
+
+### `getEventCommentList(params)`
+Retrieves a list of event comments.
+
+### `insertEventComment(data)`
+Creates a new event comment.
+
+### `deleteEventComment(data)`
+Deletes an event comment.
+
+### `getEventResultList(params)`
+Retrieves a list of event results.
