@@ -14,27 +14,32 @@ import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import MDButton from "components/MDButton";
+import { getProfile } from "api/login";
 
 function Overview() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProfile = () => {
+    const fetchProfile = async () => {
       try {
+        const token = sessionStorage.getItem("token");
         const storedProfile = sessionStorage.getItem("userProfile");
-        if (storedProfile) {
-          setUser(JSON.parse(storedProfile));
+        const userId = storedProfile ? JSON.parse(storedProfile).userId : null;
+
+        if (token && userId) {
+          const data = await getProfile(userId, token);
+          setUser(data);
         } else {
-          // Fallback or redirect if no session data
-          // navigate("/authentication/sign-in");
+          navigate("/authentication/sign-in");
         }
       } catch (error) {
-        console.error("Failed to load profile from session", error);
+        console.error("Failed to load profile", error);
+        navigate("/authentication/sign-in");
       }
     };
     fetchProfile();
-  }, []);
+  }, [navigate]);
 
   const logout = () => {
     sessionStorage.clear();
