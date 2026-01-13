@@ -1,28 +1,57 @@
 # Board API
 
-Provides functions to manage bulletins and boards.
+Provides functions for managing boards and board posts.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
+### `getBoardMngList(params)`
+Retrieves a list of board management settings.
+
+### `getBoardMngDetail(boardMngSeq)`
+Retrieves details of a specific board management setting.
+
+### `insertBoardMng(data)`
+Creates a new board management setting.
+
+### `updateBoardMng(data)`
+Updates an existing board management setting.
+
+### `deleteBoardMng(boardMngSeq)`
+Deletes a board management setting.
+
+### `getBoardTypeList()`
+Retrieves a list of board types.
+
 ### `getBoardList(params)`
-Fetches a list of board posts.
-- **Params**:
-  - `pageIndex`: Current page number.
-  - `searchCondition`: Search condition.
-  - `searchKeyword`: Search keyword.
-  - `searchUseYn`: Usage status filter.
+Retrieves a list of board posts.
 
 ### `getBoardDetail(params)`
-Fetches details of a board post.
+Retrieves details of a specific board post.
 
 ### `insertBoard(data)`
-Registers a new board post.
+Creates a new board post.
 
 ### `updateBoard(data)`
 Updates an existing board post.
 
 ### `deleteBoard(data)`
 Deletes a board post.
+
+### `insertBoardReply(data)`
+Creates a reply to a board post.
+
+### `getBoardCodeList(params)`
+Retrieves a list of board codes.
+
+### `insertBoardCatInfo(data)`
+Creates board category information.
+
+### `deleteBoardCatInfo(data)`
+Deletes board category information.
+
+### `getRankCodeList(params)`
+Retrieves a list of rank codes.

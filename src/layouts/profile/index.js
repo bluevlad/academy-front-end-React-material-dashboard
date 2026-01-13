@@ -14,27 +14,32 @@ import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import MDButton from "components/MDButton";
+import { getProfile } from "api/login";
 
 function Overview() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProfile = () => {
+    const fetchProfile = async () => {
       try {
+        const token = sessionStorage.getItem("token");
         const storedProfile = sessionStorage.getItem("userProfile");
-        if (storedProfile) {
-          setUser(JSON.parse(storedProfile));
+        const userId = storedProfile ? JSON.parse(storedProfile).userId : null;
+
+        if (token && userId) {
+          const data = await getProfile(userId, token);
+          setUser(data);
         } else {
-          // Fallback or redirect if no session data
-          // navigate("/authentication/sign-in");
+          navigate("/authentication/sign-in");
         }
       } catch (error) {
-        console.error("Failed to load profile from session", error);
+        console.error("Failed to load profile", error);
+        navigate("/authentication/sign-in");
       }
     };
     fetchProfile();
-  }, []);
+  }, [navigate]);
 
   const logout = () => {
     sessionStorage.clear();
@@ -48,30 +53,44 @@ function Overview() {
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox mb={2} />
-      <Header>
+      <Header user={user}>
         <MDBox mt={5} mb={3}>
           <Grid container spacing={1}>
             <Grid item xs={12} md={6} xl={4}>
-              <PlatformSettings />
+              <PlatformSettings user={user} />
             </Grid>
             <Grid item xs={12} md={6} xl={4} sx={{ display: "flex" }}>
               <Divider orientation="vertical" sx={{ ml: -2, mr: 1 }} />
               {user ? (
                 <ProfileInfoCard
                   title="profile information"
-                  description={`Hello, ${user.userNm || user.userId || "User"}`}
+                  description={`${user.memo || user.userNm || user.userId}`}
                   info={{
                     fullName: user.userNm || user.userId || "",
-                    id: user.userId || "",
+                    userId: user.userId || "",
                     email: user.email || "",
-                    role: user.userRole || "",
-                    address: user.address1 ? `${user.address1} ${user.address2 || ""}` : "",
+                    location: user.address1
+                      ? `${user.address1} ${user.address2 || ""}`
+                      : "Unspecified",
+                    birthDay: user.birthDay || "Unspecified",
+                    sex: user.sex || "Unspecified",
+                    point: user.userPoint ? `${user.userPoint}` : "0",
                   }}
                   social={[
                     {
                       link: "https://www.facebook.com/",
                       icon: <FacebookIcon />,
                       color: "facebook",
+                    },
+                    {
+                      link: "https://twitter.com/",
+                      icon: <TwitterIcon />,
+                      color: "twitter",
+                    },
+                    {
+                      link: "https://www.instagram.com/",
+                      icon: <InstagramIcon />,
+                      color: "instagram",
                     },
                   ]}
                   action={{ route: "", tooltip: "Edit Profile" }}

@@ -6,17 +6,29 @@ This directory contains the main page layouts and high-level components correspo
 
 Each subdirectory represents a specific feature area or page layout in the application.
 
-- **authentication**: Layouts for authentication pages like Sign In and Sign Up.
-- **billing**: Layout for the billing and payments section.
-- **dashboard**: The main dashboard overview layout.
-- **profile**: User profile page layout.
-- **tables**: Layouts for displaying tabular data.
-- **rtl**: Layout configuration for Right-to-Left language support.
-- **notifications**: Layout for notification displays.
-- **board**: Layouts for board-related functionality (e.g., Notice Boards).
-- **exam**: Layouts for exam management.
-- **member**: Layouts for member management.
-- **menu**: Layouts for menu management.
+- **admin**: Administrative pages.
+- **authentication**: Authentication pages (Sign In, Sign Up).
+- **billing**: Billing and payments.
+- **board**: Board management pages.
+- **book**: Book management pages.
+- **coop**: Cooperative partner pages.
+- **counsel**: Counseling management pages.
+- **dashboard**: Main dashboard overview.
+- **dday**: D-Day management pages.
+- **event**: Event management pages.
+- **exam**: Exam management pages.
+- **lecture**: Lecture management pages.
+- **manage**: Management pages (Sales, Teacher Calc).
+- **member**: Member management pages.
+- **menu**: Menu management pages.
+- **note**: Note management pages.
+- **order**: Order management pages.
+- **popup**: Popup management pages.
+- **profile**: User profile page.
+- **rtl**: Right-to-Left layout support.
+- **stat**: Statistics pages.
+- **survey**: Survey management pages.
+- **tables**: Tabular data displays.
 
 ## Role
 

@@ -1,20 +1,42 @@
 # Lecture API
 
-Provides functions to manage lectures.
+Provides functions for managing lectures.
 
 ## Files
-- `index.js`: General lecture functions.
-- `lectureOff.js`: Functions for offline lectures.
-- `lectureReply.js`: Functions for lecture replies/reviews.
+
+- `index.js`
 
 ## Functions
 
-### Offline Lecture (`lectureOff.js`)
-- `getLectureOffList`
-- `getLectureOffDetail`
-- `insertLectureOff`
-- `updateLectureOff`
+### `getLectureList(params)`
+Retrieves a list of lectures.
 
-### Lecture Reply (`lectureReply.js`)
-- `getLectureReplyList`
-- `deleteLectureReply`
+### `getLectureView(params)`
+Retrieves details of a specific lecture.
+
+### `insertLecture(data)`
+Creates a new lecture.
+
+### `updateLecture(data)`
+Updates an existing lecture.
+
+### `deleteLecture(data)`
+Deletes a lecture.
+
+### `deleteLectureList(data)`
+Deletes multiple lectures.
+
+### `updateOnOffStatus(data)`
+Updates the on/off status of a lecture.
+
+### `getBookList(params)`
+Retrieves a list of books associated with lectures.
+
+### `getBookView(params)`
+Retrieves details of a specific book associated with a lecture.
+
+### `getCouponList(params)`
+Retrieves a list of coupons.
+
+### `getMoCouponList(params)`
+Retrieves a list of mobile coupons.

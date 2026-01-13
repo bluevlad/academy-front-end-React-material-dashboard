@@ -28,12 +28,18 @@ export const register = async (userData) => {
   }
 };
 
-export const getProfile = async () => {
+export const getProfile = async (userId, token = null) => {
   try {
-    const token = localStorage.getItem("token");
+    const useToken = token || sessionStorage.getItem("token") || localStorage.getItem("token");
+
+    if (!useToken) {
+      throw new Error("No token found");
+    }
+
     const response = await superagent
-      .get(`${BASE_API}/auth/profile`)
-      .set("Authorization", `Bearer ${token}`);
+      .post(`${BASE_API}/auth/profile`)
+      .set("Authorization", `Bearer ${useToken}`)
+      .send({ userId });
     return response.body;
   } catch (error) {
     if (error.response && error.response.body) {

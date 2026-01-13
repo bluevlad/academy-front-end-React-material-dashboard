@@ -1,33 +1,27 @@
 # D-Day API
 
-Provides functions to manage D-Day items.
+Provides functions for managing D-Day events.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
-### `fetchDdayList(params)`
-Fetches a list of D-Day items.
-- **Params**:
-  - `pageIndex`: Current page number.
-  - `pageUnit`: Items per page.
-  - `searchCondition`: Search condition.
-  - `searchKeyword`: Search keyword.
-  - `searchDdayName`: D-Day name filter.
-  - `searchCategory`: Category filter.
+### `fetchDdayCategoryList(params)`
+Retrieves a list of D-Day categories.
 
-### `fetchDdayView(params)`
-Fetches D-Day details.
+### `fetchDdayList(params)`
+Retrieves a list of D-Day events.
+
+### `fetchDdayDetail(params)`
+Retrieves details of a specific D-Day event.
 
 ### `insertDday(data)`
-Registers a new D-Day item.
+Creates a new D-Day event.
 
 ### `updateDday(data)`
-Updates an existing D-Day item.
+Updates an existing D-Day event.
 
 ### `deleteDday(data)`
-Deletes a D-Day item.
-
-### `fetchDdayCategoryList()`
-Fetches the D-Day category list.
+Deletes a D-Day event.

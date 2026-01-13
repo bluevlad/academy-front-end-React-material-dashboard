@@ -1,20 +1,21 @@
 # Popup API
 
-Provides functions to manage popups.
+Provides functions for managing popups.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
 ### `getPopupList(params)`
-Fetches a list of popups.
+Retrieves a list of popups.
 
 ### `getPopupDetail(params)`
-Fetches popup details.
+Retrieves details of a specific popup.
 
 ### `insertPopup(data)`
-Registers a new popup.
+Creates a new popup.
 
 ### `updatePopup(data)`
 Updates an existing popup.
@@ -24,3 +25,6 @@ Deletes a popup.
 
 ### `updatePopupOpenYn(data)`
 Updates the open status of a popup.
+
+### `updatePopupHit(data)`
+Updates the hit count of a popup.

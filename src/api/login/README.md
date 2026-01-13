@@ -3,12 +3,16 @@
 Provides functions for user authentication.
 
 ## Files
+
 - `index.js`
 
 ## Functions
 
-### `login(data)`
+### `login(credentials)`
 Authenticates a user.
 
+### `register(userData)`
+Registers a new user.
+
 ### `getProfile()`
-Fetches the current user's profile.
+Retrieves the current user's profile.
